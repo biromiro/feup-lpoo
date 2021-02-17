@@ -1,6 +1,6 @@
 [submodule "tp-01/helloworld"]
 	path = tp-01/helloworld
-	url = https://github.com/biromiro/helloworld.git
+	url = https://github.com/biromiro/helloworld/tree/master
 [submodule "tp-01/operations"]
 	path = tp-01/operations
-	url = https://github.com/biromiro/operations.git
+	url = https://github.com/biromiro/operations/tree/master
