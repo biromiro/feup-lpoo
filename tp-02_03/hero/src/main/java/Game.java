@@ -27,7 +27,7 @@ public class Game {
             screen.startScreen();             // screens must be started
             screen.doResizeIfNecessary();     // resize screen if necessary
 
-            arena = new Arena(40,20, screen);
+            arena = new Arena(40,20);
 
         } catch (IOException e){
             e.printStackTrace();
@@ -53,7 +53,7 @@ public class Game {
                 draw();
                 key = screen.readInput();
                 processKey(key);
-                if(key.getKeyType() == KeyType.Character && key.getCharacter() == 'q')
+                if(key.getKeyType() == KeyType.Character && key.getCharacter() == 'q' || arena.isGameOver())
                     screen.close();
             }while(key.getKeyType() != KeyType.EOF);
 
