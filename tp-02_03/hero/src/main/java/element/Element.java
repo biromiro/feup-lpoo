@@ -1,10 +1,13 @@
+package element;
+
 import com.googlecode.lanterna.graphics.TextGraphics;
+import datatype.Position;
 
 public abstract class Element {
 
     protected Position position;
 
-    Element(int x, int y){
+    public Element(int x, int y){
         position = new Position(x,y);
     }
 

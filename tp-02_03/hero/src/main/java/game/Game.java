@@ -1,5 +1,6 @@
+package game;
+
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
@@ -7,15 +8,15 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.input.KeyStroke;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class Game {
 
     Screen screen;
     Arena arena;
+    Menu menu;
 
-    Game(){
+    public Game(){
         try {
             TerminalSize terminalSize = new TerminalSize(40, 20);
             DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory()
@@ -27,7 +28,9 @@ public class Game {
             screen.startScreen();             // screens must be started
             screen.doResizeIfNecessary();     // resize screen if necessary
 
-            arena = new Arena(40,20);
+            arena = new Arena(30,16);
+
+            menu = new Menu(arena);
 
         } catch (IOException e){
             e.printStackTrace();
@@ -36,14 +39,22 @@ public class Game {
 
 
     private void draw() throws IOException {
-        screen.clear();
-        arena.draw(screen.newTextGraphics());
-        screen.refresh();
+        if(!menu.isInGame()){
+            screen.clear();
+            menu.draw(screen.newTextGraphics());
+            screen.refresh();
+        } else {
+            screen.clear();
+            arena.draw(screen.newTextGraphics());
+            screen.refresh();
+        }
     }
 
 
     private void processKey(KeyStroke key){
-        arena.processKey(key);
+        if(!menu.isInGame())
+            menu.processKey(key);
+        else arena.processKey(key);
     }
 
     public void run(){
@@ -53,8 +64,11 @@ public class Game {
                 draw();
                 key = screen.readInput();
                 processKey(key);
-                if(key.getKeyType() == KeyType.Character && key.getCharacter() == 'q' || arena.isGameOver())
+                if(key.getKeyType() == KeyType.Character && key.getCharacter() == 'q')
                     screen.close();
+                if(arena.isGameOver()){
+                    menu.endGame();
+                }
             }while(key.getKeyType() != KeyType.EOF);
 
         }catch (IOException e){

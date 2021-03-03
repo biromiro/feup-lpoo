@@ -1,17 +1,22 @@
+package element.monster;
+
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import element.monster.Monster;
 
-public class Wall extends Element{
+public class Pawn extends Monster {
 
-    Wall(int x, int y) {
+    public Pawn(int x, int y){
         super(x, y);
     }
 
+
+    @Override
     public void draw(TextGraphics graphics){
-        graphics.setForegroundColor(TextColor.Factory.fromString("#8c2d19"));
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
         graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "*");
+        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "P");
     }
 }
