@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'info.solidsoft.pitest' version '1.6.0'
+}
+
+group 'com.aor.numbers'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  implementation 'junit:junit:4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation 'org.mockito:mockito-core:3.7.7'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+pitest {
+    junit5PluginVersion = '0.12'
+    excludedTestClasses = ['de.comp.**.*IT']
+}
