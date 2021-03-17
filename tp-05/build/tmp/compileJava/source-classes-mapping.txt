@@ -1,0 +1,34 @@
+area/HasArea.java
+ area.HasArea
+shapes/Shape.java
+ shapes.Shape
+shapes/Line.java
+ shapes.Line
+shapes/Square.java
+ shapes.Square
+shapes/AreaShape.java
+ shapes.AreaShape
+shapes/Rectangle.java
+ shapes.Rectangle
+shapes/Drawable.java
+ shapes.Drawable
+shapes/Triangle.java
+ shapes.Triangle
+shapes/Circle.java
+ shapes.Circle
+shapes/Elipse.java
+ shapes.Elipse
+area/AreaStringOutputter.java
+ area.AreaStringOutputter
+area/SumProvider.java
+ area.SumProvider
+area/AreaXMLOutputer.java
+ area.AreaXMLOutputer
+city/City.java
+ city.City
+city/House.java
+ city.House
+Application.java
+ Application
+area/AreaAggregator.java
+ area.AreaAggregator
