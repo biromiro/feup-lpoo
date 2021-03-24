@@ -1,0 +1,32 @@
+stringOperations/StringRecipe.java
+ stringOperations.StringRecipe
+stringOperations/StringCaseChanger.java
+ stringOperations.StringCaseChanger
+bar/ImpatientStrategy.java
+ bar.ImpatientStrategy
+bar/Bar.java
+ bar.Bar
+bar/OrderingStrategy.java
+ bar.OrderingStrategy
+bar/StringBar.java
+ bar.StringBar
+bar/HumanClient.java
+ bar.HumanClient
+bar/BarObserver.java
+ bar.BarObserver
+stringOperations/StringTransformerGroup.java
+ stringOperations.StringTransformerGroup
+stringOperations/StringInverter.java
+ stringOperations.StringInverter
+stringOperations/StringTransformer.java
+ stringOperations.StringTransformer
+stringOperations/StringDrink.java
+ stringOperations.StringDrink
+stringOperations/StringReplacer.java
+ stringOperations.StringReplacer
+bar/Client.java
+ bar.Client
+stringOperations/StringDrinkRequest.java
+ stringOperations.StringDrinkRequest
+bar/SmartStrategy.java
+ bar.SmartStrategy

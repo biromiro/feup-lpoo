@@ -1,0 +1,16 @@
+bar/StringBarTest.java
+ bar.StringBarTest
+bar/BarClientTest.java
+ bar.BarClientTest
+stringOperations/StringTransformerTest.java
+ stringOperations.StringTransformerTest
+stringOperations/StringRecipeTest.java
+ stringOperations.StringRecipeTest
+stringOperations/StringDrinkTest.java
+ stringOperations.StringDrinkTest
+stringOperations/StringTransformerGroupTest.java
+ stringOperations.StringTransformerGroupTest
+stringOperations/StringUndoTest.java
+ stringOperations.StringUndoTest
+bar/OrderingStrategies.java
+ bar.OrderingStrategies
