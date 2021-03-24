@@ -47,7 +47,7 @@ public class SmartStrategy implements OrderingStrategy{
 
     private void processWaitingOrders(Bar bar){
         List<StringDrinkRequest> requests = orders.get(bar);
-
+        if(requests == null) return;
         for(StringDrinkRequest request: requests){
             ((StringBar) bar).order(request.getDrink(), request.getRecipe());
         }

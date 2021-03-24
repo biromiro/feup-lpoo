@@ -6,22 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderingStrategies {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    private StringRecipe getRecipe() {
-        StringInverter si = new StringInverter();
-        StringCaseChanger cc = new StringCaseChanger();
-        StringReplacer sr = new StringReplacer('A', 'X');
-
-        List<StringTransformer> transformers = new ArrayList<>();
-        transformers.add(si);
-        transformers.add(cc);
-        transformers.add(sr);
-
-        StringRecipe recipe = new StringRecipe(transformers);
-        return recipe;
-    }
-
+public class OrderingStrategies extends Ordering{
     @Test
     public void impatientStrategy() {
         StringBar stringBar = new StringBar();
@@ -36,9 +23,6 @@ public class OrderingStrategies {
         assertEquals("dCbX-DcBa", drink.getText());
     }
 
-    private void assertEquals(String s, String text) {
-    }
-
     @Test
     public void smartStrategyStartOpened() {
         StringBar stringBar = new StringBar();
@@ -48,10 +32,11 @@ public class OrderingStrategies {
         SmartStrategy strategy = new SmartStrategy();
         HumanClient client = new HumanClient(strategy);
 
+        stringBar.addObserver(client);
+
         // Recipe is ordered immediately as happy hour was already under way
         stringBar.startHappyHour();
         client.wants(drink, recipe, stringBar);
-        assertEquals("dCbX-DcBa","AbCd-aBcD");
         assertEquals("dCbX-DcBa", drink.getText());
     }
 

@@ -30,3 +30,9 @@ stringOperations/StringDrinkRequest.java
  stringOperations.StringDrinkRequest
 bar/SmartStrategy.java
  bar.SmartStrategy
+bar/AlienClient.java
+ bar.AlienClient
+bar/FerengiClient.java
+ bar.FerengiClient
+bar/RomulanClient.java
+ bar.RomulanClient
